@@ -67,8 +67,8 @@ categories:
     initiatives:
     - name: Jenkins Templating Engine 2.0 
       description: "JTE enables the creation of tool-agnostic pipeline templates that can be shared across teams. Version 2.0 will have improved integration with the underlying pipeline engine and incorporate many of the community's top feature requests." 
-      status: near-term
-      link: https://github.com/jenkinsci/templating-engine-plugin/blob/2.0/Version_2.adoc
+      status: released
+      link: https://github.com/jenkinsci/templating-engine-plugin
       labels:
       - feature
     - name: Pipeline development in IDE
@@ -189,17 +189,12 @@ categories:
       link: https://issues.jenkins.io/browse/INFRA-2328
       labels:
       - documentation
-    - name: Agent terminology cleanup
-      description: > 
-        In Jenkins 2.0 we deprecated the "slave" terminology and mandated usage of the "agent" or "node" terms instead.
-        There are still leftover occurrences in documentation, Web UI, localizations and API.
-        We want to clean them up.
-      status: current
-      link: https://issues.jenkins.io/browse/JENKINS-42816
+    - name: Add site search
+      description: Add site search to www.jenkins.io and plugins.jenkins.io
+      status: released
+      link: https://plugins.jenkins.io
       labels:
       - documentation
-      - feature
-      - policies
     - name: "UI/UX: Accessibility"
       status: near-term
       description: Improve Jenkins navigation and layouts to make it more usable by as many user groups as possible.
@@ -247,12 +242,16 @@ categories:
       link: https://issues.jenkins.io/browse/INFRA-2516
       labels:
       - infrastructure
-    - name: Inappropriate terminology deprecation and updates
+    - name: Non-inclusive terminology cleanup
       description: >
-        We would like to deprecate and replace the inappropriate "master", "whitelist" and "blacklist" terms.
+        In 2016, the Jenkins community decided to change the non-inclusive terminology within the project.
+        The “slave” term was deprecated and replaced by “agent” in Jenkins 2.0.
+        In July 2020 we also adopted the “controller” term instead of “master”, and deprecated the “whitelist/blacklist” terms.
+        There are many places where the old terminology still needs to be replaced.
+        We want to replace the deprecated terminology by new terms: “controller”, “agent”, “allowlist”, “denylist”, and “main” for branch names.
         Scope: documentation, Web UI, localizations, API, etc.
       status: current
-      link: https://groups.google.com/forum/#!topic/jenkinsci-dev/CLR55wMZwZ8
+      link: https://www.jenkins.io/sigs/advocacy-and-outreach/#inclusive-naming
       labels:
       - documentation
       - feature
@@ -342,6 +341,16 @@ categories:
       It also includes integrations with cloud storage providers.
     link: /sigs/cloud-native
     initiatives:
+    - name: CloudEvents support
+      status: current
+      description: >
+         Microservices are the de facto architecture of the cloud and events are the primary way in which microservices communicate a change of state.
+         CloudEvents is a specification for describing event data in common, standardised formats.
+         The CloudEvents plugin would enable Jenkins support for CloudEvents by allowing events to be emitted in Jenkins pipelines and triggering Jobs on certain events,
+         bringing Jenkins one step closer to interoperability with other technologies in the cloud.
+      link: https://www.jenkins.io/projects/gsoc/2021/project-ideas/cloudevents-plugin/
+      labels:
+      - feature
     - name: 'JEP-219: Jenkins Kubernetes Operator'
       description: >
         Further evolution of a Kubernetes Native Operator which manages operations for Jenkins on Kubernetes.
@@ -382,9 +391,10 @@ categories:
       - feature
     - name: Document Jenkins on Kubernetes
       description: Describe the concepts, techniques, and choices available for Jenkins on Kubernetes
-      status: current
+      status: near-term
       link: https://jenkins.io/sigs/docs/#jenkins-on-kubernetes
       labels:
+      - outreach-program
       - documentation
     - name: 'Tekton Pipelines build steps'
       description: >
@@ -462,12 +472,6 @@ categories:
       status: current
       description: Docker image support for IBM PowerPC 64 running Java 8 and Java 11
       link: https://issues.jenkins.io/browse/JENKINS-61774
-      labels:
-      - feature
-    - name: OpenJ9 Docker images
-      status: current
-      description: We would like to provide official images based on OpenJ9 JVM
-      link: https://issues.jenkins.io/browse/JENKINS-62150
       labels:
       - feature
     - name: Docker images for ARM 64
@@ -641,6 +645,13 @@ categories:
       labels:
       - community
       - documentation
+    - name: Google Summer of Code 2021
+      status: current
+      link: https://jenkins.io/projects/gsoc/2021
+      labels:
+      - outreach-program
+      - events
+      - feature
     - name: Google Summer of Code 2020
       status: released
       link: https://jenkins.io/projects/gsoc/2020
@@ -650,7 +661,14 @@ categories:
       - feature
     - name: Google Season of Docs 2020
       status: released
-      link: https://www.jenkins.io/sigs/docs/gsod/
+      link: https://www.jenkins.io/sigs/docs/gsod/2020/
+      labels:
+      - outreach-program
+      - documentation
+      - events
+    - name: SheCodeAfrica Contributhon 2021
+      status: released
+      link: https://www.jenkins.io/blog/2021/04/07/contributhon-participants/
       labels:
       - outreach-program
       - documentation

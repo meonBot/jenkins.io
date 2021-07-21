@@ -23,6 +23,10 @@ The Jenkins controller administers the Jenkins agents and orchestrates their wor
 Agents may be connected to the Jenkins controller using either local or cloud computers.
 
 The agents require a Java installation and a network connection to the Jenkins controller.
+View the 3 minute video below for a brief explanation of Jenkins agents.
+
+.What is a Jenkins Agent
+video::4KghHJEz5no[youtube, width=640, height=360]
 
 == Configuring agents with Docker
 
@@ -118,7 +122,7 @@ jenkins/ssh-agent:alpine
 $ VARS1="HOME=|USER=|MAIL=|LC_ALL=|LS_COLORS=|LANG="
 $ VARS2="HOSTNAME=|PWD=|TERM=|SHLVL=|LANGUAGE=|_="
 $ VARS="${VARS1}|${VARS2}"
-$ docker exec agent1 sh -c "env | egrep -v "^(${VARS})" >> /etc/environment"
+$ docker exec agent1 sh -c "env | egrep -v '^(${VARS})' >> /etc/environment"
 ----
 +
 [NOTE]
@@ -180,7 +184,7 @@ image:node/node-6.png[Agent job 2,650]
 8. Add the command: `echo $NODE_NAME` in the `Command` field of the `Execute shell` step  and the name +
 of the agent will be printed inside the log when this job is run;
 9. press the save button and then select the option `Build Now`;
-10. Wait some seconds ant the go to `Console Output` page
+10. Wait some seconds and then go to `Console Output` page
 +
 image:node/node-7.png[Agent job 3,650]
 

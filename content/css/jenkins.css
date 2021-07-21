@@ -5,7 +5,8 @@ h3[id]:before,
 h4[id]:before,
 h5[id]:before,
 h6[id]:before,
-dt[id]:before {
+dt[id]:before,
+.artifact-list li:before {
   display: block;
   content: " ";
 
@@ -502,90 +503,6 @@ body #sidebar ul.resources>li>a {
   padding: 0 0 .5rem 40px;
   margin-left: 1rem;
   font-weight: bold
-}
-
-#gutter-box {
-  position: relative;
-}
-
-.fixed>#gutter-peg {
-  position: fixed;
-  top: 3.5rem
-}
-
-#gutter {
-  position: absolute;
-  width: 3.25rem;
-  padding-left: .25rem;
-  top: 0;
-  bottom: 0;
-  font-size: 1rem;
-  text-align: right;
-  padding: 0;
-  box-shadow: inset -1px 0 3px #ddd;
-  border: 1px solid #ddd
-}
-
-#gutter #gutter-peg {
-  width: 2.60rem;
-  z-index: 2;
-  margin-left: .6rem
-}
-
-#gutter #gutter-peg>div {
-  background: #ddd;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  margin: .5rem 0 .5rem .1rem;
-  text-align: center;
-  padding: .25rem
-}
-
-#gutter a {
-  display: block;
-  position: relative;
-  height: 1.75rem;
-  width: 1.75rem;
-  line-height: 1.75rem;
-  text-align: center;
-  background: #999;
-  background: #335061;
-  color: #fff;
-  border-radius: 50%;
-  margin: .25rem 0
-}
-
-#gutter a>div {
-  display: inline
-}
-
-#gutter .side-tab>.hover-text {
-  width: 0;
-  text-indent: .25rem;
-  line-height: 1.75rem;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  color: #555;
-  display: block;
-  font-size: .75rem;
-  text-align: left;
-  left: 2.25rem;
-  background: #fff;
-  z-index: 3;
-  box-shadow: inset 0 0 0 1px #ccc, 0 1px 3px #ddd;
-  -webkit-transition: width .5s ease-out;
-  -moz-transition: width .5s ease-out;
-  -o-transition: width .5s ease-out;
-  transition: width .5s ease-out;
-}
-
-#gutter .side-tab:hover>.hover-text {
-  width: 7rem;
-}
-
-body .gutter {
-  padding-left: 3rem !important
 }
 
 body .ji-dated-list>.post {
@@ -1124,9 +1041,6 @@ z.f9f9f9.section .ji-blog-list>.post>.body>.teaser:after, .ji-dated-list>.post>.
   box-shadow: none;
 }
 
-#gutter-box>#gutter {
-  display: none;
-}
 .brick-tops.footer {background:repeating-linear-gradient( 90deg, transparent, transparent 12px, #234 12px, #357 22px, #234 32px ); border-bottom:2px solid rgba(255,255,255,.1)}
 #ji-download .btn:hover .brick-tops{
  background: repeating-linear-gradient( 90deg, transparent, transparent 12px, #136 12px, #05a 22px, #136 32px );
@@ -1784,4 +1698,33 @@ table.syntax > tbody > tr > th {
 
 .grid-all thead th {
     border-bottom-width: 2px;
+}
+
+.nav-item.searchbox {
+  margin: auto;
+  margin-left: 0.75em;
+}
+
+.twitter-share-button {
+    position: relative;
+    height: 20px;
+    box-sizing: border-box;
+    padding: 1px 8px 1px 24px;
+    background-color: #1b95e0;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 0.7rem;
+    line-height: 20px;
+    display: inline-block;
+    cursor: pointer;
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+    background-position: 4px;
+    background-image: url(/images/twitter-logo.svg)
+}
+
+.twitter-share-button:hover {
+  color: #fff;
+  text-decoration: none;
 }

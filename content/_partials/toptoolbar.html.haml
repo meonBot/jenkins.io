@@ -1,5 +1,5 @@
 %nav#ji-toolbar.navbar.navbar-expand-lg.navbar-dark.top.bg-dark.fixed-top
-  %a.navbar-brand{:href => site.base_url}
+  %a.navbar-brand{:href => expand_link('/')}
     = site.base_title
   %button.navbar-toggler{"data-target" => "#CollapsingNavbar", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
@@ -38,6 +38,8 @@
             = '&nbsp;-&nbsp;Jenkins Pipeline'
           %a.dropdown-item{:href => expand_link('doc/book/managing/')}
             = '&nbsp;-&nbsp;Managing Jenkins'
+          %a.dropdown-item{:href => expand_link('doc/book/security/')}
+            = '&nbsp;-&nbsp;Securing Jenkins'
           %a.dropdown-item{:href => expand_link('doc/book/system-administration')}
             = '&nbsp;-&nbsp;System Administration'
           %a.dropdown-item{:href => expand_link('doc/book/glossary/')}
@@ -133,6 +135,9 @@
       %li.nav-item
         %a.nav-link.btn.btn-outline-secondary{:href => expand_link('download')}
           Download
+
+      %li.nav-item.searchbox
+        %input.form-control.searchbox{:type => "search", :placeholder => "Search", :aria => { :label => "Search" }}
 / Spacing to make the fixed-top sticky navbar not occlude any content below it
 .pt-4
   &nbsp;

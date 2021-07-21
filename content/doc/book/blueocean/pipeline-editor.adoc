@@ -98,7 +98,7 @@ image:blueocean/editor/stage-editor-error.png[Stage editor with error, role=cent
 == Stage configuration
 
 Selecting a stage in the Stage editor will open the "Stage Configuration" sheet on the right side.
-Here we can can change the name of the Stage, delete the Stage,
+Here we can change the name of the Stage, delete the Stage,
 and add steps to the Stage.
 
 image:blueocean/editor/stage-configuration.png[Stage Configuration, role=center]
@@ -130,7 +130,7 @@ image:blueocean/editor/step-error.png[Step configuration with error, role=center
 
 == Save Pipeline dialog
 
-In order to be run, changes to a Pipeline must be saved in source control
+In order to be run, changes to a Pipeline must be saved in source control.
 The "Save Pipeline" dialog controls saving of changes to source control.
 
 image:blueocean/editor/save-pipeline.png[Save Pipeline Dialog, role=center]

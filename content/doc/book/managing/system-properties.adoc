@@ -54,11 +54,13 @@ properties:
 - name: hudson.ClassicPluginStrategy.noBytecodeTransformer
   tags:
   - escape hatch
+  - obsolete
   def: |
     `false`
   since: 1.538 # https://github.com/jenkinsci/jenkins/commit/f98c4627da3c21e37aff82c75c0ef7240e60b4da
   description: |
     Disable the bytecode transformer that retains compatibility at runtime after changing public Java APIs.
+    Has no effect since 2.296, as the bytecode transformer has been removed.
 
 - name: hudson.ClassicPluginStrategy.useAntClassLoader
   tags:
@@ -911,6 +913,17 @@ properties:
   description: |
     LDAP filter to look for groups by their names
 
+- name: hudson.security.SecurityRealm.sessionFixationProtectionMode
+  tags:
+  - security
+  - escape hatch
+  def: |
+    `1`
+  since: 2.300 and 2.289.2
+  description: |
+    Escape hatch for link:/security/advisory/2021-06-30/#SECURITY-2371[SECURITY-2371].
+    Set to `0` to disable the fix or to `2` to select an alternative implementation.
+
 - name: hudson.security.TokenBasedRememberMeServices2.skipTooFarExpirationDateCheck
   tags:
   - security
@@ -1071,10 +1084,12 @@ properties:
 - name: hudson.TreeView
   tags:
   - feature
+  - obsolete
   def: |
     `false`
   description: |
-    Experimental nested views feature
+    Enables the experimental nested views feature.
+    Has no effect since 2.302, as the experimental nested views feature has been removed.
 
 - name: hudson.triggers.SafeTimerTask.logsTargetDir
   tags:
@@ -1159,6 +1174,7 @@ properties:
   tags:
   - security
   - escape hatch
+  - obsolete
   def: |
     `false`
   since: 2.263.2 / 2.275
@@ -1166,6 +1182,7 @@ properties:
     Opts out of a change in default behavior that disables the processing of XML external entities (XXE) for the `Digester2` class in Jenkins if set to `true`.
     This system property can be changed while Jenkins is running and the change is effective immediately.
     See link:/doc/upgrade-guide/2.263/#digester2[2.263.2 upgrade guide].
+    Has no effect since 2.297, as the `Digester2` class has been removed.
 
 - name: hudson.util.FormValidation.applyContentSecurityPolicyHeaders
   tags:
@@ -1925,6 +1942,17 @@ properties:
   since: workflow-durable-task-step-plugin 2.29
   description: |
     How long to wait for remote calls (see https://issues.jenkins.io/browse/JENKINS-46507[JENKINS-46507]).
+
+- name: org.kohsuke.stapler.RequestImpl.ALLOWED_HTTP_VERBS_FOR_FORMS
+  tags:
+  - escape hatch
+  - security
+  def: |
+    `POST`
+  since: 2.277.2, 2.287
+  description: |
+    HTTP verbs of requests that are allowed to provide `StaplerRequest#getSubmittedForm` or `@SubmittedForm`.
+    Escape hatch for a security hardening, see link:/doc/upgrade-guide/2.277/#submittedform[2.277.2 upgrade guide].
 
 - name: stapler.jelly.noCache
   tags:
