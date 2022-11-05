@@ -9,7 +9,7 @@
     "bootstrap": "^4.3.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.14.7",
-    "tether": "^1.4.5"
+    "tether": "^2.0.0"
   },
   "devDependencies": {
     "broken-link-checker": "^0.7.8",
